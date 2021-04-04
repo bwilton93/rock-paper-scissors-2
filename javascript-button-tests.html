@@ -1,0 +1,165 @@
+<html>
+    <head>
+        <style>
+            * {
+                font-size: 16px;
+                margin: 0;
+            }
+
+            h1 {
+                font-size: 2rem;
+                padding: 20px 0px;
+            }
+
+            button {
+                margin: 3px 1px;
+            }
+
+            .main-container {
+                display: flex;
+                justify-content: center;
+                width: 100vw;
+                height: 100vh;
+                background: red;
+            }
+
+            .game-container {
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+                width: 90%;
+                max-width: 1000px;
+                height: 30%;
+                background: white;
+                border-radius: 25px;
+            }
+
+            .buttons-container {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                width: 90%;
+            }
+
+            .game-in-play-container {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 25px;
+                height: 100%;
+            }
+
+            .play-button {
+                display: block;
+                padding-bottom: 175px;
+            }
+            
+            .play-button-inner {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .text-block {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 100%;
+                min-width: 300px;
+                margin-top: 50px;
+            }
+
+            .text-block > div {
+                margin: 6px;
+            }
+
+            .scores {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                background: #fff;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                padding-left: 25px;
+                border-radius: 25px;
+            }
+
+            .scores > div {
+                padding: 6px;
+                font-size: 1.5rem;
+            }
+
+            .player-box, .computer-box {
+                background-color: white;
+                font-size: 2rem;
+            }
+
+            .round-result {
+                padding-top: 75px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="main-container">
+            <div class="game-container">
+                <div class="buttons-container">
+                    <div class="play-button" id='play-button-container'>
+                        <div class="play-button-inner">
+                            <h1>Rock, Paper, Scissors!</h1>
+                            <button id='play-button'>Play Game!</button>
+                        </div>
+                    </div>
+                    <div class="game-in-play-container" id='game-in-play-container'>
+                        <div class="text-block">
+                            <div class="round">
+                                Round 1
+                            </div>
+                            <div class="scores">
+                                <div class="player-box" id="player-score">Player</div>
+                                <div class="scorecard">0</div>
+                                <div class="scorecard">  :  </div>
+                                <div class="scorecard">0</div>
+                                <div class="computer-box" id="computer-score">Computer</div>
+                            </div>
+                            <div class="round-result">Make your selection.</div>
+                        </div>
+                        <div class="selection-buttons">
+                            <button id='rock'>Rock</button>
+                            <button id='paper'>Paper</button>
+                            <button id='scissors'>Scissors</button>
+                        </div>
+                        <div class="quit-button">
+                            <button id='quit-button'>Quit Game</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    let buttonClick = function () {
+        let playerChoice = this.id;
+        console.log(playerChoice);        
+    }
+    
+    let gameToggle = function () {
+        let x = document.getElementById('play-button-container');
+        let y = document.getElementById('game-in-play-container');
+        if (x.style.display === 'none') {
+            x.style.display = 'block';
+            y.style.display = 'none';
+        } else {
+            x.style.display = 'none';
+            y.style.display = 'flex';
+        }
+    }
+
+    document.getElementById('play-button').onclick = gameToggle;
+    document.getElementById('quit-button').onclick = gameToggle;
+
+    document.getElementById('rock').onclick = buttonClick;
+    document.getElementById('paper').onclick = buttonClick;
+    document.getElementById('scissors').onclick = buttonClick;
+</script>

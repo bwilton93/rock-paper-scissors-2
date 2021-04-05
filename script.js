@@ -43,11 +43,10 @@ function game() {
     document.getElementById('player-scorecard').innerHTML = playerScore;
     document.getElementById('computer-scorecard').innerHTML = computerScore;
     
-    if (round < 5) {
-        roundText.innerHTML = 'Round ' + (round + 1);
-        document.getElementById('result-message').innerHTML = resultMessage;
-    } else if (round === 5) {
-        document.getElementById('result-message').innerHTML = '';
+    roundText.innerHTML = 'Round ' + (round + 1);
+    document.getElementById('result-message').innerHTML = `You chose: ${playerChoice} <br>
+        The computer chose: ${computerChoice} <br>` + resultMessage;
+    if (round === 5) {
         if (playerScore > computerScore) {
             roundText.innerHTML = 'Congratulations, you win!';
         } else if (computerScore > playerScore) {
@@ -71,6 +70,13 @@ let gameToggle = function () {
     } else {
         x.style.display = 'none';
         y.style.display = 'flex';
+        round = 0;
+        playerScore = 0;
+        computerScore = 0;
+        document.getElementById('player-scorecard').innerHTML = playerScore;
+        document.getElementById('computer-scorecard').innerHTML = computerScore;
+        roundText.innerHTML = 'Round 1';
+        document.getElementById('result-message').innerHTML = 'Make your selection';
     }
 }
 
@@ -81,6 +87,7 @@ let playAgainButton = function () {
 
     document.getElementById('player-scorecard').innerHTML = 0;
     document.getElementById('computer-scorecard').innerHTML = 0;
+    document.getElementById('result-message').innerHTML = 'Make your selection'
     roundText.innerHTML = 'Round 1';
     
     let x = document.getElementById('selection-buttons-2');

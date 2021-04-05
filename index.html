@@ -16,22 +16,27 @@
                 </div>
                 <div class="game-in-play-container" id='game-in-play-container'>
                     <div class="text-block">
-                        <div class="round">
+                        <div id="round">
                             Round 1
                         </div>
                         <div class="scores">
                             <div class="player-box" id="player-score">Player</div>
-                            <div class="scorecard">0</div>
+                            <div class="scorecard" id="player-scorecard">0</div>
                             <div class="scorecard">  :  </div>
-                            <div class="scorecard">0</div>
+                            <div class="scorecard" id="computer-scorecard">0</div>
                             <div class="computer-box" id="computer-score">Computer</div>
                         </div>
-                        <div class="round-result">Make your selection.</div>
+                        <div class="round-result" id="result-message">Make your selection.</div>
                     </div>
-                    <div class="selection-buttons">
-                        <button id='rock'>Rock</button>
-                        <button id='paper'>Paper</button>
-                        <button id='scissors'>Scissors</button>
+                    <div class="selection-buttons" id="selection-buttons">
+                        <div id="selection-buttons-1">
+                            <button id='rock'>Rock</button>
+                            <button id='paper'>Paper</button>
+                            <button id='scissors'>Scissors</button>
+                        </div>
+                        <div id="selection-buttons-2">
+                            <button id="play-again">Play Again</button>
+                        </div>
                     </div>
                     <div class="quit-button">
                         <button id='quit-button'>Quit Game</button>

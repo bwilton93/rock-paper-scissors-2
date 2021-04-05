@@ -38,7 +38,15 @@ button {
     width: 90%;
 }
 
-.game-in-play-container {
+#selection-buttons-1 {
+    display: block;
+}
+
+#selection-buttons-2 {
+    display: none;
+}
+
+#game-in-play-container {
     display: none;
     flex-direction: column;
     align-items: center;
@@ -46,7 +54,7 @@ button {
     height: 100%;
 }
 
-.play-button {
+#play-button-container {
     display: block;
     padding-bottom: 175px;
 }

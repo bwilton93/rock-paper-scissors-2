@@ -10,6 +10,7 @@ h1 {
 
 button {
     margin: 3px 1px;
+    font-size: 20px;
 }
 
 .main-container {
@@ -40,11 +41,26 @@ button {
 }
 
 #selection-buttons-1 {
-    display: block;
+    display: flex;
 }
+
 
 #selection-buttons-2 {
     display: none;
+}
+
+@media screen and (max-width: 600px) {
+    #selection-buttons-1 {
+        flex-direction: column;
+    }
+
+    #selection-buttons-2 {
+        margin-top: 20px;
+    }
+}
+
+.quit-button {
+    margin-top: 20px;
 }
 
 #game-in-play-container {

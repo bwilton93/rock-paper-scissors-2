@@ -42,8 +42,9 @@ button {
 
 #selection-buttons-1 {
     display: flex;
+    justify-content: space-between;
+    margin: 0px 10px;
 }
-
 
 #selection-buttons-2 {
     display: none;

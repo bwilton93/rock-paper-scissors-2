@@ -94,7 +94,7 @@ let playAgainButton = function () {
     let y = document.getElementById('selection-buttons-1');
     if (x.style.display === 'block') {
         x.style.display = 'none';
-        y.style.display = 'block';
+        y.style.display = 'flex';
     }
 
     console.log(round);
